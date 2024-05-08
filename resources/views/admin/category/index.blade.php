@@ -19,10 +19,7 @@
                         <th>Description</th>
                         <th>Status</th>
                         <th>Popular</th>
-                        <th>Meta Title</th>
-                        <th>Meta Description</th>
                         <th>Image</th>
-                        <th>Meta Keywords</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
@@ -35,12 +32,9 @@
                         <td>{{ $category->description }}</td>
                         <td>{{ $category->status }}</td>
                         <td>{{ $category->popular }}</td>
-                        <td>{{ $category->meta_titel }}</td>
-                        <td>{{ $category->meta_descrip }}</td>
                         <td>
                             <img src="{{ asset('assets/uploads/category/' . $category->image) }}" alt="{{ $category->name }}" style="max-width: 100px;">
                         </td>
-                        <td>{{ $category->meta_keywords }}</td>
                         <td>
                             <a href="{{ url('edit-category/'.$category->id) }}" class="btn btn-link" onclick="return confirmEdit()">
                                 <i class="material-icons" style="color: blue;">edit</i>

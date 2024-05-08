@@ -23,6 +23,7 @@ class HomeController extends Controller
      */
     public function index()
     {
+        // return view('/')->with('status', 'Login to Successfully');
         return view('home');
     }
 }

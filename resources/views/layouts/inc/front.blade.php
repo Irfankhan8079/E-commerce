@@ -27,36 +27,49 @@
     <link href="{{ asset('frontend/css/bootstrap5.css') }}" rel="stylesheet">
     <link href="{{ asset('frontend/css/owl.carousel.min.css') }}" rel="stylesheet">
     <link href="{{ asset('frontend/css/owl.theme.default.min.css') }}" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   
+
+    <style>
+        a {
+            text-decoration: none;
+        }
+    </style>
 </head>
 
 <body>
 
 
-        @include('layouts.inc.frontendnav')
-                @yield('content')
-        @include('layouts.inc.frontendfooter')
+    @include('layouts.inc.frontendnav')
+    <div class="content">
+        @yield('content')
+    </div>
+    @include('layouts.inc.frontendfooter')
 
 
     <!-- Scripts -->
 
-     <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset('js/app.js') }}" defer></script>
     <!--<script src="{{ asset('admin/js/jquery.min.js') }}" defer></script>
     <script src="{{ asset('admin/js/popper.min.js') }}" defer></script>
     <script src="{{ asset('admin/js/bootstrap-material-design.min.js') }}" defer></script>
     <script src="{{ asset('admin/js/perfect-scrollbar.jquery.min.js') }}" defer></script> -->
-    
+    <script src="{{ asset('frontend/js/custom.js') }}" defer></script>
     <script src="{{ asset('frontend/js/bootstrap.bundle.min.js') }}" defer></script>
     <script src="{{ asset('frontend/js/jquery-3.7.1.min.js') }}" defer></script>
     <script src="{{ asset('frontend/js/owl.carousel.min.js') }}" defer></script>
+    <!-- <script src="{{ asset('frontend/js/jquery.min.js') }}" defer></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
-<!-- Your JavaScript for initializing the Carousel -->
+    <!-- Your JavaScript for initializing the Carousel -->
 
     @if(session('status'))
     <script>
-     swal("{{session('status')}}");
+        swal("{{session('status')}}");
     </script>
-    
+
     @endif
     @yield('scripts')
 </body>

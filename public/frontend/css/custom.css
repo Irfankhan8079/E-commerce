@@ -1,0 +1,108 @@
+*{
+    font-family: "Roboto", sans-serif;
+
+}
+
+.custom-card .card-img-top {
+    max-width: 100%;
+    height: auto;
+    background-color: #f0f0f0;
+}
+
+/* Custom CSS for Bootstrap card */
+.card {
+    background-color: #f0f0f0; /* Set background color */
+    border: 1px solid #dee2e6; /* Set border */
+    border-radius: 10px; /* Set border radius */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add box shadow */
+    transition: box-shadow 0.3s ease; /* Add transition for box shadow */
+}
+
+.card:hover {
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1); /* Change box shadow on hover */
+}
+
+/* Custom CSS for card image */
+.card-img-top {
+    max-width: 100%; /* Make image responsive */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Custom CSS for card title */
+.card-title {
+    color: #333333; /* Set text color */
+    font-weight: bold; /* Set font weight */
+}
+
+/* Custom CSS for card body */
+.card-body {
+    padding: 20px; /* Add padding */
+}
+
+/* Add more custom styles as needed */
+/* Custom CSS for Bootstrap card */
+.custom-card {
+    width: 250px; /* Set custom width */
+    height: 350px; /* Set custom height */
+   
+        background-color: #f0f0f0; /* Set the background color of the card */
+        border: none; /* Remove any border */
+    
+}
+
+/* Custom CSS for card image */
+.custom-card .card-img-top {
+    width: 100%; /* Ensure the image fills the entire width of its container */
+    height: auto; /* Allow the height to adjust to maintain aspect ratio */
+    object-fit: cover; /* Ensure the image covers the entire space */
+    background-color: inherit; /* Inherit the background color from the parent card */
+}
+
+/* Custom CSS for card body */
+.custom-card .card-body {
+    height: 40%; /* Set custom height for the card body */
+    overflow: hidden; /* Hide overflow if content exceeds height */
+}
+/* Custom CSS for card image */
+/* Custom CSS for card image */
+.custom-card .card-img-top {
+    width: 100%; /* Ensure the image fills the entire width of its container */
+    height: 280px; /* Set a fixed height for all card images */
+    object-fit: cover; /* Ensure the image covers the entire space */
+}
+
+.item {
+    width: 300px; /* Set a fixed width for each item */
+    height: auto; /* Allow the height to adjust to the content */
+}
+
+.card.custom-card {
+    height: 575px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

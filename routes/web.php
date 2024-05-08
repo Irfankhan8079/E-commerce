@@ -3,7 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\frontend\FrontendController;
-
+use App\Http\Controllers\frontend\CartController;
+use App\Http\Controllers\frontend\CheckoutController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,8 +20,21 @@ use App\Http\Controllers\frontend\FrontendController;
 //     return view('welcome');
 // });
 Route::get('/', [FrontendController::class , 'index']);
+Route::get('category', [FrontendController::class , 'category']);
+Route::get('category/{slug}', [FrontendController::class , 'viewcategory']);
+Route::get('category/{cate_slug}/{product_slug}', [FrontendController::class , 'viewproduct']);
+
+
 
 Auth::routes();
+Route::post('add-to-cart', [CartController::class , 'addProduct']);
+Route::post('delete-cart-item', [CartController::class , 'deleteProduct']);
+Route::post('update-cart-item', [CartController::class , 'updateProduct']);
+Route::middleware(['auth'])->group(function (){
+   Route::get('cart', [CartController::class , 'viewCart']);
+   Route::get('checkout', [CheckoutController::class , 'index']);
+   Route::post('place-order', [CheckoutController::class , 'placeOrder']);
+});
 
 Route::get('/home', 'HomeController@index')->name('home');
 
