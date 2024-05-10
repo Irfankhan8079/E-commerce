@@ -5,6 +5,9 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\frontend\FrontendController;
 use App\Http\Controllers\frontend\CartController;
 use App\Http\Controllers\frontend\CheckoutController;
+use App\Http\Controllers\frontend\UserController;
+use App\Http\Controllers\Admin\OrderController;
+use App\Http\Controllers\Admin\DashboardController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -34,6 +37,8 @@ Route::middleware(['auth'])->group(function (){
    Route::get('cart', [CartController::class , 'viewCart']);
    Route::get('checkout', [CheckoutController::class , 'index']);
    Route::post('place-order', [CheckoutController::class , 'placeOrder']);
+   Route::get('my-orders', [UserController::class , 'index']);
+   Route::get('view-order/{id}', [UserController::class , 'viewOrder']);
 });
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -55,6 +60,15 @@ Route::get('/home', 'HomeController@index')->name('home');
     Route::get('edit-products/{id}', 'Admin\ProductController@edit');
     Route::post('/update-products/{id}', 'Admin\ProductController@update');
     Route::get('/delete-products/{id}', 'Admin\ProductController@destroy');
+
+
+    Route::get('orders', [OrderController::class , 'index']);
+    Route::get('admin/view-order/{id}', [OrderController::class , 'viewOrder']);
+    Route::post('update-order/{id}', [OrderController::class , 'updateOrder']);
+
+    Route::get('orders-history/', [OrderController::class , 'ordersHistory']);
+
+    Route::get('users', [DashboardController::class , 'users']);
  });
 
  

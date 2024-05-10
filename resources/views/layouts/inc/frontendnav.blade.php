@@ -32,6 +32,9 @@
           </a>
 
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item {{ Request::is('my-orders') ? 'active' : '' }}"  href="{{ url('my-orders')}}">
+              My Orders
+            </a>
             <a class="dropdown-item" href="">
               My Profile
             </a>

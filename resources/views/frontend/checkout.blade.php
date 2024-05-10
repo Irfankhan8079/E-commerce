@@ -1,7 +1,7 @@
 @extends('layouts.inc.front')
 
 @section('titel')
-My Cart
+My Checkout
 @endsection
 
 @section('content')
@@ -16,10 +16,11 @@ My Cart
 </div>
 <div class="container mt-5">
     <form action="{{ url('place-order')}}" method="post">
-    @csrf
+        @csrf
         <div class="row">
             <div class="col-md-7">
                 <div class="card">
+
                     <div class="card-body">
                         <h6>
                             Basic Details
@@ -72,6 +73,7 @@ My Cart
             </div>
             <div class="col-md-5">
                 <div class="card">
+                    @if ($cartItem->count() > 0)
                     <div class="card-body">
                         <h6>
                             Order Details
@@ -92,19 +94,25 @@ My Cart
                                 </tr>
                             </thead>
                             <tbody>
+
                                 @foreach ($cartItem as $item)
                                 <tr>
                                     <td>{{ $item->products->name}}</td>
                                     <td>{{ $item->product_qty}}</td>
                                     <td>{{ $item->products->selling_price}}</td>
                                 </tr>
-
                                 @endforeach
+
                             </tbody>
                         </table>
                         <hr>
                         <button type="submit" class="btn btn-primary float-end">Place Order</button>
                     </div>
+                    @else
+                        <div class="card-body text-center">
+                            <h5>No products in cart.</h5>
+                        </div>
+                    @endif
                 </div>
             </div>
         </div>

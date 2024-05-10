@@ -43,10 +43,17 @@ class CheckoutController extends Controller
         $order->state = $request->input('state');
         $order->country = $request->input('country');
         $order->pincode = $request->input('pincode');
+
+        $total = 0 ;
+        $cartItems_total = Cart::where('user_id', Auth::id())->get();
+        foreach ($cartItems_total  as $product) {
+            $total += $product->products->selling_price * $product->product_qty;
+        }
+        $order->total_price = $total;
         $order->tracking_no = 'irfan'.rand(1111,9999);
         $order->save();
 
-        $order->id;
+        // $order->id;
         $cartItems = Cart::where('user_id', Auth::id())->get();
         foreach ($cartItems  as $item) {
             OrderItem::create([
@@ -75,8 +82,14 @@ class CheckoutController extends Controller
             $user->update();
         }
 
-        $cartItems = Cart::where('user_id', Auth::id())->get();
-        Cart::destroy($cartItems->pluck('id')->toArray()[0]);
+        // $cartItems = Cart::where('user_id', Auth::id())->get();
+         Cart::where('user_id', Auth::id())->delete();
+        // foreach ($cartItems as $cartItem) {
+        //     $cartItem->delete();
+        // }
+        // Cart::destroy($cartItems);
+        // dd($cartItems);
+        // Cart::destroy($cartItems);
         return redirect('/')->with('status' , 'Order Placed Successfully');
     }
 }
