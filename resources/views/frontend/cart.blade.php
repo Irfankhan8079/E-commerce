@@ -10,7 +10,7 @@ My Cart
     <div class="container">
         <h6 class="mb-0">
             <a href="{{ url('/')}}">Home</a> /
-            <a href="{{ url('cart')}}">Cart</a>
+            <a href="{{ url('cart')}}">Shopping Cart</a>
         </h6>
     </div>
 </div>
@@ -18,6 +18,8 @@ My Cart
     <div class="card shodow ">
         @if ($cartItems->count() > 0)
         <div class="card-body">
+            <h2>Shopping Cart</h2>
+            <hr>
             @php
             $total = 0;
             @endphp
@@ -67,7 +69,9 @@ My Cart
         </div>
         @else
         <div class="card-body text-center">
+        <img src="{{ asset('assets/images/empty-cart.webp')}}"  style="width: 500px;" height="300px" alt="...">
             <h2>Your <i class="fa fa-shopping-cart"></i>Cart is Empty</h2>
+            <p>There is nothing in your cart. Let's add some items</p>
             <a href="{{ url('category')}}" class="btn btn-outline-primary float-end">Contiune Shopping</a>
         </div>
 

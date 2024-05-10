@@ -69,6 +69,7 @@ Route::get('/home', 'HomeController@index')->name('home');
     Route::get('orders-history/', [OrderController::class , 'ordersHistory']);
 
     Route::get('users', [DashboardController::class , 'users']);
+    Route::get('view-user/{id}', [DashboardController::class , 'viewUser']);
  });
 
  
