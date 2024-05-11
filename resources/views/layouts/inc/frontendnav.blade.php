@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
+<nav class="navbar navbar-expand-lg  ">
   <div class="container">
     <a class="navbar-brand" href="{{url('/')}}">E-Shop</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -14,7 +14,16 @@
           <a class="nav-link {{ Request::is('category') ? 'active' : '' }}" href="{{ url('category')}}">Category</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link {{ Request::is('cart') ? 'active' : '' }}" href="{{ url('cart')}}">Cart</a>
+          <a class="nav-link {{ Request::is('cart') ? 'active' : '' }}" href="{{ url('cart')}}" style="position: relative;">
+            <i class="bi bi-bag" style="font-size: 24px; font-weight: bold;"></i>
+            <span class="badge badge-pill bg-primary cart-count" style="color: white; font-size: 12px; position: absolute; bottom: 4px; left: 23px;">0</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link {{ Request::is('wishlist') ? 'active' : '' }}" href="{{ url('wishlist')}}" style="position: relative;">
+            <i class="bi bi-heart d-icon-heart" style="font-size: 24px; font-weight: bold;"></i>
+            <span class="badge badge-pill bg-success wishlist-count" style="color: white; font-size: 12px; position: absolute; bottom: 4px; left: 20px;">0</span>
+          </a>
         </li>
         @guest
         <li class="nav-item">
@@ -32,7 +41,7 @@
           </a>
 
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item {{ Request::is('my-orders') ? 'active' : '' }}"  href="{{ url('my-orders')}}">
+            <a class="dropdown-item {{ Request::is('my-orders') ? 'active' : '' }}" href="{{ url('my-orders')}}">
               My Orders
             </a>
             <a class="dropdown-item" href="">

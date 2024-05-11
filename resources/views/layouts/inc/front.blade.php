@@ -19,6 +19,7 @@
     <!--     Fonts and icons     -->
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css" rel="stylesheet">
     <!-- Styles -->
     <!-- <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('admin/css/custom.css') }}" rel="stylesheet">
@@ -56,6 +57,7 @@
     <script src="{{ asset('admin/js/bootstrap-material-design.min.js') }}" defer></script>
     <script src="{{ asset('admin/js/perfect-scrollbar.jquery.min.js') }}" defer></script> -->
     <script src="{{ asset('frontend/js/custom.js') }}" defer></script>
+    <script src="{{ asset('frontend/js/checkout.js') }}" defer></script>
     <script src="{{ asset('frontend/js/bootstrap.bundle.min.js') }}" defer></script>
     <script src="{{ asset('frontend/js/jquery-3.7.1.min.js') }}" defer></script>
     <script src="{{ asset('frontend/js/owl.carousel.min.js') }}" defer></script>

@@ -8,6 +8,7 @@ use App\Http\Controllers\frontend\CheckoutController;
 use App\Http\Controllers\frontend\UserController;
 use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Frontend\WishlistController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -30,15 +31,22 @@ Route::get('category/{cate_slug}/{product_slug}', [FrontendController::class , '
 
 
 Auth::routes();
+Route::get('load-cart-data', [CartController::class , 'cartCount']);
 Route::post('add-to-cart', [CartController::class , 'addProduct']);
 Route::post('delete-cart-item', [CartController::class , 'deleteProduct']);
 Route::post('update-cart-item', [CartController::class , 'updateProduct']);
+Route::post('add-to-wishlist', [WishlistController::class , 'addWishlist']);
+Route::post('delete-wishlist-item', [WishlistController::class , 'deleteWishlist']);
+Route::get('load-wishlist-data', [WishlistController::class , 'wishlistCount']);
+
 Route::middleware(['auth'])->group(function (){
    Route::get('cart', [CartController::class , 'viewCart']);
    Route::get('checkout', [CheckoutController::class , 'index']);
    Route::post('place-order', [CheckoutController::class , 'placeOrder']);
    Route::get('my-orders', [UserController::class , 'index']);
    Route::get('view-order/{id}', [UserController::class , 'viewOrder']);
+   Route::get('wishlist', [WishlistController::class , 'index']);
+   Route::post('proceed-to-pay', [CheckoutController::class , 'razorpayCheck']);
 });
 
 Route::get('/home', 'HomeController@index')->name('home');

@@ -80,4 +80,10 @@ class CartController extends Controller
         $cartItems = Cart::where('user_id', Auth::id())->get();
         return view('frontend.cart', compact('cartItems'));
     }
+
+    public function cartCount(){
+
+        $cartcount = Cart::where('user_id', Auth::id())->count();
+        return response()->json(['count' => $cartcount]);
+    }
 }
