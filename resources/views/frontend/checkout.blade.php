@@ -10,7 +10,7 @@ My Checkout
     <div class="container">
         <h6 class="mb-0">
             <a href="{{ url('/')}}">Home</a> /
-            <a href="{{ url('checkout')}}">Checkout</a>
+            <a href="{{ url('checkout')}}">Checkout</a> 
         </h6>
     </div>
 </div>
