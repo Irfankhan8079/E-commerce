@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 @extends('layouts.inc.front')
 
 @section('titel')
@@ -150,4 +148,3 @@ My Checkout
 
 <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 @endsection
->>>>>>> master
