@@ -126,6 +126,8 @@ My Checkout
                         <input type="hidden" name="payment_mode" value="COD">
                         <button type="submit" class="btn btn-success float-end w-100">Place Order | COD</button>
                         <button type="submit" class="btn btn-primary float-end w-100 mt-3 razorpay_btn">Pay With Razorpay</button>
+                        <div id="paypal-button-container"></div>
+
                     </div>
                     @else
                     <div class="card-body text-center">
