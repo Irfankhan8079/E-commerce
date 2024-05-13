@@ -7,19 +7,16 @@
 @section('content')
 <!-- @include('layouts.inc.frontendslider') -->
 <div class="py-5">
-<<<<<<< HEAD
-<div class="py-3 mb-4 shodow-sm bg-warning border-top">
+<!-- <div class="py-3 mb-4 shodow-sm bg-warning border-top">
     <div class="container">     
     <h6 class="mb-0"> <a href="{{ url('category')}}">Collections</a> /  <a href="{{ url('category/'.$categorys->slug)}}">{{ $categorys->name }}</a></h6>
     </div>
-</div>
-=======
+</div> -->
     <div class="py-3 mb-4 shodow-sm bg-warning border-top">
         <div class="container">
             <h6 class="mb-0"> <a href="{{ url('category')}}">Collections</a> / <a href="{{ url('category/'.$categorys->slug)}}">{{ $categorys->name }}</a></h6>
         </div>
     </div>
->>>>>>> master
     <div class="container">
         <div class="row">
             <h2>{{ $categorys->name }}</h2>

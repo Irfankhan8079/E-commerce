@@ -19,10 +19,7 @@ My Orders
     <div class="row">
         <div class="col-md-12">
             <div class="card">
-<<<<<<< HEAD
-=======
                 @if ($orders->count() > 0)
->>>>>>> master
                 <div class="card-header">
                     <h4>My Orders</h4>
                 </div>
@@ -61,8 +58,6 @@ My Orders
                         </tbody>
                     </table>
                 </div>
-<<<<<<< HEAD
-=======
                 @else
                 <div class="card-body text-center">
                     <img src="{{ asset('assets/images/ordernow.jpg')}}" style="width: 500px;" height="300px" alt="Empty Cart Image">
@@ -71,7 +66,6 @@ My Orders
                     <a href="{{ url('category')}}" class="btn btn-outline-primary float-end">Continue Shopping</a>
                 </div>
                 @endif
->>>>>>> master
             </div>
         </div>
     </div>
